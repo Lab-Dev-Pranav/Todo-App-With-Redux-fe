@@ -1,39 +1,52 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 import { addTodo } from "../features/todo/todoSlice";
 
 export default function AddTodo() {
-  let [todo, setTodo] = useState("");
-  let dispatch = useDispatch();
+  const [todo, setTodo] = useState("");
+  const dispatch = useDispatch();
 
-  let onChange = (e) => {
+  const onChange = (e) => {
     setTodo(e.target.value);
   };
 
-  let onSubmit = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
-    // console.log(todo);
+    if (todo.trim() === "") return; // prevent empty todos
     dispatch(addTodo(todo));
     setTodo("");
   };
 
   return (
-    <>
-      <form onSubmit={onSubmit}>
-        <br />
-        <TextField
-          type="text"
-          id="filled-basic"
-          label="Enter Todo"
-          variant="outlined"
-          value={todo}
-          onChange={onChange}
-        />
-        <br />
-        <br />
-        <button type="submit">Add Todo</button>
-      </form>
-    </>
+    <form
+      onSubmit={onSubmit}
+      style={{
+        display: "flex",
+        gap: "12px",
+        justifyContent: "center",
+        alignItems: "center",
+        margin: "20px 0",
+      }}
+    >
+      <TextField
+        type="text"
+        label="Enter a task..."
+        variant="outlined"
+        value={todo}
+        onChange={onChange}
+        size="small"
+        sx={{ width: "300px" }}
+      />
+      <Button
+        type="submit"
+        variant="contained"
+        color="primary"
+        sx={{ padding: "8px 20px", borderRadius: "8px" }}
+      >
+        Add
+      </Button>
+    </form>
   );
 }

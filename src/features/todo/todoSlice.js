@@ -19,12 +19,19 @@ const todoSlice = createSlice({
         todo.id === action.payload ? { ...todo, isDone: true } : todo
       );
     },
+
+    reorderTodos: (state, action) => {
+      const { sourceIndex, destinationIndex } = action.payload;
+      const [moved] = state.splice(sourceIndex, 1);
+      state.splice(destinationIndex, 0, moved);
+    },
+
     resetTodos: () => {
       return [];
     },
   },
 });
 
-export const { addTodo, deleteTodo, markAsDoneTodo, resetTodos } =
+export const { addTodo, deleteTodo, markAsDoneTodo, resetTodos, reorderTodos } =
   todoSlice.actions;
 export default todoSlice.reducer;
