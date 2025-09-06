@@ -4,6 +4,7 @@ import Todo from "./components/todo";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
 import "./App.css";
+import DevBy from "./components/devby";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <hr />
         {/* <AddTodo /> */}
       </Provider>
+      <DevBy />
     </>
   );
 }
