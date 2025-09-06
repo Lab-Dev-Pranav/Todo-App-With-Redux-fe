@@ -33,7 +33,7 @@ export default function Todo() {
         <div
           key={todo.id}
           style={{
-            background: "#7f7f7fff",
+            background: "#354f52",
             border: "1px solid #ccc",
             borderRadius: "8px",
             padding: "12px",
