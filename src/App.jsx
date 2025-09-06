@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Todo from "../components/todo";
+import Todo from "/components/todo";
 
 import { Provider } from "react-redux";
 import { store } from "./app/store";
