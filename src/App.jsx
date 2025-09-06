@@ -4,7 +4,7 @@ import Todo from "./components/Todo"; // ✅ uppercase 'T'
 import { Provider } from "react-redux";
 import { store } from "./app/store";
 import "./App.css";
-import DevBy from "./components/devby";
+import DevBy from "../components/Devby";
 
 function App() {
   return (
