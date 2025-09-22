@@ -14,7 +14,7 @@ export default function AddTodo() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (todo.trim() === "") return; // prevent empty todos
+    if (todo.trim() === "") return; 
     dispatch(addTodo(todo));
     setTodo("");
   };
