@@ -39,7 +39,7 @@ export default function AddTodo() {
         size="small"
         sx={{ width: "300px" }}
       />
-<br>
+<br />
       <Button
         type="submit"
         variant="contained"
