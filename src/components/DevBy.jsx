@@ -5,7 +5,7 @@ function DevBy() {
       <p>
         Developed by{" "}
         <a
-          href="https://dev-pranav.onrender.com/"
+          href="https://devpranav.onrender.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
